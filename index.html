@@ -1,203 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowTrack – Turn Meetings into Action</title>
+  <meta name="description" content="FlowTrack helps teams capture, summarize, and act on meeting insights automatically using AI.">
+  <meta name="keywords" content="AI meetings, productivity tool, SaaS, team collaboration">
 
-<title>SignalDesk Your Team, In Sync Without Meetings</title>
-<meta name="description" content="SignalDesk replaces unnecessary meetings with real-time async updates, AI summaries, and team clarity.">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
-
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        base: '#0B0B0F',
-        soft: '#15151B',
-        glow: '#8B5CF6',
-        accent: '#22C55E'
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6D28D9',
+            accent: '#22D3EE'
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 
-<style>
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 4px 4px;
-  pointer-events: none;
-}
-</style>
-
-<!-- Analytics Placeholder -->
-<script>
-// console.log("Analytics ready");
-</script>
-
+  <!-- Analytics Placeholder -->
+  <script>
+    // Example: Google Analytics / Meta Pixel
+    console.log("Analytics script placeholder");
+  </script>
 </head>
 
-<body class="bg-base text-gray-300">
+<body class="bg-gray-950 text-gray-200 font-sans">
 
-<!-- NAV -->
-<header id="nav" class="fixed w-full z-50 transition bg-white text-black">
-  <div class="w-[80%] mx-auto flex justify-between items-center p-5 ">
-    <h1 class="font-semibold tracking-wide">SignalDesk</h1>
-    <nav class="hidden md:flex gap-8 text-sm">
-      <a href="#features" >Features</a>
-      <a href="#" >Pricing</a>
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 backdrop-blur bg-gray-950/70 border-b border-gray-800">
+  <div class="w-[90%] mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold text-white">FlowTrack</h1>
+
+    <nav class="hidden md:flex space-x-8 text-sm">
+      <a href="#features" class="hover:text-accent">Features</a>
+      <a href="#pricing" class="hover:text-accent">Pricing</a>
+      <a href="#faq" class="hover:text-accent">FAQ</a>
     </nav>
+
     <button id="menuBtn" class="md:hidden">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex flex-col p-4 space-y-4 bg-gray-900 md:hidden">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="pt-32 pb-20 px-6">
-  <div class="w-[80%] mx-auto grid md:grid-cols-2 gap-12 items-center">
+<section class="pt-32 pb-20 text-center px-6">
+  <h2 class="text-4xl md:text-6xl font-bold leading-tight">
+    Turn Meetings into  
+    <span class="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
+      Actionable Insights
+    </span>
+  </h2>
 
-    <!-- LEFT -->
-    <div>
-      <p class="text-sm text-gray-500 mb-4">NEW WAY TO WORK</p>
+  <p class="mt-6 text-gray-400 max-w-xl mx-auto">
+    FlowTrack automatically records, summarizes, and extracts action items from your meetings so your team stays aligned and productive.
+  </p>
 
-      <h2 class="text-5xl font-bold leading-tight text-white">
-        Stop Meeting.  
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-glow to-accent">
-          Start Shipping.
-        </span>
-      </h2>
+  <div class="mt-8 flex justify-center gap-4">
+    <button class="bg-primary hover:bg-purple-700 px-6 py-3 rounded-lg font-medium transition">
+      Start Free Trial
+    </button>
+    <button class="border border-gray-700 hover:border-accent px-6 py-3 rounded-lg transition">
+      Watch Demo
+    </button>
+  </div>
 
-      <p class="mt-6 text-gray-400 max-w-md">
-        SignalDesk turns scattered team updates into a clear, real-time feed your whole team can act on—without another meeting.
-      </p>
-
-      <div class="mt-8 flex gap-4">
-        <button class="bg-glow px-6 py-3 rounded-lg text-white hover:scale-105 transition">
-          Try it Free
-        </button>
-        <button class="border border-gray-700 px-6 py-3 rounded-lg hover:border-white">
-          Live Demo
-        </button>
-      </div>
+  <!-- Mock Dashboard -->
+  <div class="mt-16 max-w-4xl mx-auto bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-xl">
+    <p class="text-sm text-gray-400">Meeting Summary Preview</p>
+    <div class="mt-4 space-y-2 text-left">
+      <p>✅ Key decisions extracted</p>
+      <p>📌 Action items assigned</p>
+      <p>🧠 AI-generated summary</p>
     </div>
-
-    <!-- RIGHT (LIVE PANEL) -->
-    <div class="bg-soft border border-gray-800 rounded-xl p-5 shadow-2xl">
-
-      <p class="text-xs text-gray-500 mb-3">LIVE TEAM FEED</p>
-
-      <div id="feed" class="space-y-3 text-sm">
-        <!-- JS will inject items -->
-      </div>
-
-    </div>
-
   </div>
 </section>
 
 <!-- FEATURES -->
-<section id="features" class="py-20 px-6">
-  <div class="w-[80%] mx-auto grid md:grid-cols-3 gap-10">
+<section id="features" class="py-20 px-6 bg-gray-900">
+  <div class="w-[90%] mx-auto grid md:grid-cols-3 gap-8">
 
-    <div>
-      <h3 class="text-white text-lg">Async First</h3>
-      <p class="text-gray-400 mt-2">Replace meetings with structured updates your team actually reads.</p>
+    <div class="p-6 border border-gray-800 rounded-xl hover:border-accent transition">
+      <h3 class="text-lg font-semibold">AI Summaries</h3>
+      <p class="mt-2 text-gray-400">Get instant meeting summaries without lifting a finger.</p>
     </div>
 
-    <div>
-      <h3 class="text-white text-lg">AI Clarity</h3>
-      <p class="text-gray-400 mt-2">Automatically summarize discussions into decisions and tasks.</p>
+    <div class="p-6 border border-gray-800 rounded-xl hover:border-accent transition">
+      <h3 class="text-lg font-semibold">Action Tracking</h3>
+      <p class="mt-2 text-gray-400">Automatically assign and track action items.</p>
     </div>
 
-    <div>
-      <h3 class="text-white text-lg">Signal > Noise</h3>
-      <p class="text-gray-400 mt-2">See only what matters. No clutter. No wasted time.</p>
+    <div class="p-6 border border-gray-800 rounded-xl hover:border-accent transition">
+      <h3 class="text-lg font-semibold">Team Insights</h3>
+      <p class="mt-2 text-gray-400">Understand team productivity with AI insights.</p>
     </div>
 
   </div>
 </section>
 
-<!-- STRIP -->
-<section class="py-16 px-6 text-center border-y border-gray-800">
-  <p class="text-gray-400 max-w-xl mx-auto">
-    Teams using SignalDesk report fewer meetings, faster decisions, and clearer accountability.
-  </p>
+<!-- HOW IT WORKS -->
+<section class="py-20 px-6 text-center">
+  <h2 class="text-3xl font-bold">How It Works</h2>
+
+  <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div>
+      <p class="text-xl font-semibold">1. Connect</p>
+      <p class="text-gray-400 mt-2">Integrate your meeting tools</p>
+    </div>
+    <div>
+      <p class="text-xl font-semibold">2. Analyze</p>
+      <p class="text-gray-400 mt-2">AI processes conversations</p>
+    </div>
+    <div>
+      <p class="text-xl font-semibold">3. Act</p>
+      <p class="text-gray-400 mt-2">Get tasks and summaries instantly</p>
+    </div>
+  </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="py-20 px-6">
-  <div class="w-[80%] mx-auto grid md:grid-cols-3 gap-8">
+<section id="pricing" class="py-20 px-6 bg-gray-900">
+  <div class="w-[90%] mx-auto grid md:grid-cols-3 gap-8">
 
-    <div class="border border-gray-800 p-6 rounded-xl">
-      <h3 class="text-white">Free</h3>
+    <div class="p-6 border border-gray-800 rounded-xl">
+      <h3 class="text-lg font-semibold">Starter</h3>
       <p class="text-3xl mt-4">$0</p>
+      <p class="mt-2 text-gray-400">Basic features</p>
     </div>
 
-    <div class="border border-glow p-6 rounded-xl bg-soft">
-      <h3 class="text-white">Pro</h3>
-      <p class="text-3xl mt-4">$15/mo</p>
+    <div class="p-6 border-2 border-primary rounded-xl scale-105 bg-gray-950">
+      <h3 class="text-lg font-semibold">Pro</h3>
+      <p class="text-3xl mt-4">$12/mo</p>
+      <p class="mt-2 text-gray-400">Full AI features</p>
     </div>
 
-    <div class="border border-gray-800 p-6 rounded-xl">
-      <h3 class="text-white">Enterprise</h3>
+    <div class="p-6 border border-gray-800 rounded-xl">
+      <h3 class="text-lg font-semibold">Enterprise</h3>
       <p class="text-3xl mt-4">Custom</p>
+      <p class="mt-2 text-gray-400">Advanced integrations</p>
     </div>
 
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center">FAQ</h2>
+
+    <div class="mt-8 space-y-4">
+
+      <div class="border border-gray-800 rounded-lg p-4">
+        <button class="faq-btn w-full text-left">Is FlowTrack free?</button>
+        <p class="faq-content hidden text-gray-400 mt-2">Yes, we offer a free plan.</p>
+      </div>
+
+      <div class="border border-gray-800 rounded-lg p-4">
+        <button class="faq-btn w-full text-left">Does it integrate with Zoom?</button>
+        <p class="faq-content hidden text-gray-400 mt-2">Yes, and other platforms.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-20 text-center">
-  <h2 class="text-3xl text-white font-semibold">
-    Work shouldn’t feel like meetings all day.
-  </h2>
-  <button class="mt-6 bg-accent text-black px-6 py-3 rounded-lg">
+<section class="py-20 text-center px-6">
+  <h2 class="text-3xl font-bold">Start your productivity upgrade today</h2>
+  <button class="mt-6 bg-accent text-black px-6 py-3 rounded-lg font-medium hover:opacity-80">
     Get Started
   </button>
 </section>
 
 <!-- FOOTER -->
-<footer class="text-center text-gray-500 text-sm py-10">
-  © 2026 SignalDesk
+<footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+  <p>© 2026 FlowTrack. All rights reserved.</p>
 </footer>
 
 <!-- JS -->
 <script>
-// navbar scroll effect
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("nav");
-  nav.classList.toggle("bg-black/50 backdrop-blur", window.scrollY > 10);
-});
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-// fake live feed
-const feed = document.getElementById("feed");
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-const messages = [
-  "Design team shipped new dashboard UI",
-  "Backend latency improved by 32%",
-  "Marketing launched new campaign",
-  "3 action items assigned from product sync",
-  "New user feedback collected"
-];
-
-function addMessage() {
-  const msg = document.createElement("div");
-  msg.className = "p-3 bg-black/40 border border-gray-800 rounded-lg";
-  msg.textContent = messages[Math.floor(Math.random() * messages.length)];
-  feed.prepend(msg);
-
-  if (feed.children.length > 5) {
-    feed.removeChild(feed.lastChild);
-  }
-}
-
-setInterval(addMessage, 2000);
-addMessage();
+  // FAQ toggle
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      content.classList.toggle('hidden');
+    });
+  });
 </script>
 
 </body>
